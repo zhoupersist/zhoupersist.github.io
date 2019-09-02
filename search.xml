@@ -4,5 +4,8 @@
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F08%2F29%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.]]></content>
+      <tags>
+        <tag>demo</tag>
+      </tags>
   </entry>
 </search>
