@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F08%2F29%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Hexosdsd. Dowdy. Dowdy. Did. D wd.]]></content>
+    <title><![CDATA[java基础之String学习]]></title>
+    <url>%2F2019%2F09%2F02%2FString%20StringBuilder%20StringBuffer%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[StringString类中使用final关键字字符数组来保存字符串，final char[] value，所以String是不可变的（反射赋予修改权限除外）。而StringBuilder和StringBuffer是继承自AbstractStringBuiler类,默认大小都是16,在AbstractStringBuilder类中也是使用字符数组保存字符串，但是没有被final修饰的，所以是对象可变的。 123AbstractStringBuilder(intcapacity) &#123; value = new char[capacity];&#125; String类型每次修改的时候，都会产生一个新的对象，引用指向新的对象。而StringBuilder和StringBuffer都是在自身对象上进行修改。 String是不可变的，线程安全。StringBuilder是线程不安全的，StringBuffer由于在方法上都加了sycronized同步锁，所以是线程安全的，但是速度比StringBuilder慢。 String Pool 字符串常量池通过字面量复制的String 都会保存在常量池中，这些字面量在编译时期就确定了。而且在运行时可以通过intern()方法将字符串再添加到常量池中。 通过intern()方法添加的字符串，会现在String Pool中判断该字符串是否在常量池中，如果在直接返回在这个字符串引用，否则先将字符串添加到String Pool中，在返回字符串的引用。 通过以下代码我们可以看一下： 1234567String s1 = new String(&quot;aaa&quot;); String s2 = new String(&quot;aaa&quot;); System.out.println(s1 == s2); //false String s3 = s1.intern(); String s4 = s1.intern(); System.out.println(s3 == s4); //true 在java7之前，字符串常量池存放在运行时常量池中，也就是方法区中，属于永久代。而在java7中，将pool移到了堆中，因为永久代很容易造成outofmemoryError java使用jni调用c++实现的StringTable的intern方法,实现跟java中的hashMap实现差不多,只是不能自动扩容, 默认大小是1009 String的StringPool是一个固定大小的hashtable jdk7以后,可以通过一个参数来指定大小: -XX:StringTableSize = size Sting = “abc” 产生了两个对象。一个是指向常量池中的对象，一个是堆中的对象。 StingBuilder和StringBuffer由于String是不可变对象，String的修改都会生成一个新的对象，性能很差，所以jdk提供了StringBuilder和StringBuffer两个类。它们们的内部也是维护了一个char[]数组，但不是final的 1String s = &quot;avc&quot; + &quot;and&quot; + &quot;you&quot; + &quot;df&quot;; 对于以上的静态字符串连接操作，jvm会在编译期就进行彻底的优化。将多个字符串的连接操作在编译时合成一个大的长字符串。 1String s = &quot;avcandyoudf&quot;; 而对于变量字符串的累加操作： 12345String str1 = new String(&quot;String&quot;);String str2 = new String(&quot;and&quot;);String str3 = new String(&quot;String&quot;);String str4 = new String(&quot;append&quot;);String str = str1 + str2 + str3 + str4; 我们通过反编译工具可以看到jvm也进行了优化，使用StringBuilder将字符串进行累加： 12345String var1 = &quot;String&quot;;String var2 = &quot;and&quot;;String var3 = &quot;String&quot;;String var4 = &quot;append&quot;;(new StringBuilder()).append(var1).append(var2).append(var3).append(var4).toString(); String的concat()方法效率是高于”+”和”+=”运算符，却又远远低于StringBuilder类. StringBuffer的方法都加上了Synchronized，所以它是线程安全的。而StringBuilder是线程不安全的。 在单线程情况下，由于同步要消耗一定的系统资源，所以最好是使用StringBuilder，而在多线程下使用StringBUffer。 还有一点：StringBuilder和StringBufffer在没有指定大小的情况下默认是16，在指定大小的情况下性能是优于默认大小的情况。]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
       <tags>
         <tag>demo</tag>
       </tags>
