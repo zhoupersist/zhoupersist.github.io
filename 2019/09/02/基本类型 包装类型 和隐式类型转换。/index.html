@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="平平淡淡,只为生活惬意">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Anty的点滴博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+<meta name="description" content="基本类型long 64int 32short 16byte 8char 16float 32double 64boolean ~ boolean只有两个值，可以使用1bit来存储，但是具体大小没有明确规定，JVM会在编译器将boolean类型的数据转换为int，1表示true，0表示false，jvm支持boolean数组，但是会通过读写byte数组来实现 位数高的基本类型转换为位数低的基本类型，">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础之基本类型">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/基本类型 包装类型 和隐式类型转换。/index.html">
 <meta property="og:site_name" content="Anty的点滴博客">
-<meta property="og:description" content="平平淡淡,只为生活惬意">
+<meta property="og:description" content="基本类型long 64int 32short 16byte 8char 16float 32double 64boolean ~ boolean只有两个值，可以使用1bit来存储，但是具体大小没有明确规定，JVM会在编译器将boolean类型的数据转换为int，1表示true，0表示false，jvm支持boolean数组，但是会通过读写byte数组来实现 位数高的基本类型转换为位数低的基本类型，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-02T03:50:20.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anty的点滴博客">
-<meta name="twitter:description" content="平平淡淡,只为生活惬意">
+<meta name="twitter:title" content="java基础之基本类型">
+<meta name="twitter:description" content="基本类型long 64int 32short 16byte 8char 16float 32double 64boolean ~ boolean只有两个值，可以使用1bit来存储，但是具体大小没有明确规定，JVM会在编译器将boolean类型的数据转换为int，1表示true，0表示false，jvm支持boolean数组，但是会通过读写byte数组来实现 位数高的基本类型转换为位数低的基本类型，">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/09/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/02/基本类型 包装类型 和隐式类型转换。/">
 
 
 
 
 
-  <title>归档 | Anty的点滴博客</title>
+  <title>java基础之基本类型 | Anty的点滴博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,142 +281,260 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/02/基本类型 包装类型 和隐式类型转换。/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小黑技术-老幺">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anty的点滴博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">java基础之基本类型</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-09-02T11:48:22+08:00">
+                2019-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/02/基本类型 包装类型 和隐式类型转换。/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/02/基本类型 包装类型 和隐式类型转换。/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2019/09/02/基本类型 包装类型 和隐式类型转换。/" class="leancloud_visitors" data-flag-title="java基础之基本类型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+	       <span>℃</span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/02/封装、继承和多态/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">java基础之面向对象</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">文章字数&#58;</span>
+                
+                <span title="Words count in article">
+                  694
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-02T11:48:42+08:00" content="2019-09-02">
-          09-02
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/02/基本类型 包装类型 和隐式类型转换。/" itemprop="url">
-              
-                <span itemprop="name">java基础之基本类型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-02T11:48:22+08:00" content="2019-09-02">
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h2 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h2><p>long 64<br>int 32<br>short 16<br>byte 8<br>char 16<br>float 32<br>double 64<br>boolean ~</p>
+<p>boolean只有两个值，可以使用1bit来存储，但是具体大小没有明确规定，JVM会在编译器将boolean类型的数据转换为int，1表示true，0表示false，jvm支持boolean数组，但是会通过读写byte数组来实现</p>
+<p>位数高的基本类型转换为位数低的基本类型，要强制类型转换(会损失精度):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int value = 1;</span><br><span class="line">short s = (short) value;</span><br></pre></td></tr></table></figure>
 
-        
-        
+<p>而从位数低的基本类型转换为位数高的基本类型则会自动转换(隐式类型转换):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">short s = 1;</span><br><span class="line">int i = s;</span><br></pre></td></tr></table></figure>
 
-        
+<p>转换由低到高 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">byte-short（char）-int-long-float-double</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/02/String StringBuilder StringBuffer的区别/" itemprop="url">
-              
-                <span itemprop="name">java基础之String学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-02T11:37:36+08:00" content="2019-09-02">
-          09-02
-        </time>
-      </div>
-
-    </header>
-  </article>
+<p>+=内部实现了转换机制 所以以下不会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int value = 1;</span><br><span class="line">short s += value;</span><br></pre></td></tr></table></figure>
 
 
+<p>我们来看以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">short s = 1;</span><br><span class="line">short t = 2;</span><br><span class="line">short m = s + t;</span><br></pre></td></tr></table></figure>
+
+<p>虽然s 和 t变量都是short，但是s + t被隐式转换为了int类型 所以还需要再强制转为short类型</p>
+<p>1.1字面量是double类型, 所以不能直接赋值给float类型,因为这是向下转型.</p>
+<h2 id="包装类型"><a href="#包装类型" class="headerlink" title="包装类型"></a>包装类型</h2><p>基本类型都有各自对应的包装类型。基本类型与其对应的包装类型之间的赋值通过自动装箱和拆箱完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer y = 1;</span><br><span class="line"></span><br><span class="line">int i = y;</span><br></pre></td></tr></table></figure>
+
+<h2 id="缓存池"><a href="#缓存池" class="headerlink" title="缓存池"></a>缓存池</h2><p>jdk1.5以后 Character Byte Char Integer Long 都有各自的缓存机制。</p>
+<p>下面主要介绍Integer的缓存池。</p>
+<p>在java8中，Integer缓存池的大小默认为是 -128-127的值</p>
+<p>我们来看一下：<br>valueOf(123) 和 new Integer(123)的区别<br>new Integer(123) 每次都会创建一个新的对象<br>而valueOf(123)获取的是缓存池中的对象，多次调用获取的都是同一个对象的引用。</p>
+<p>valueOf()的实现比较简单，会先从缓存池中判判断是否存在，存在直接使用缓存池中的对象。 如果没有就return一个new Integer对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static Integer valueOf(int i) &#123;</span><br><span class="line">        if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">            return IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">        return new Integer(i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译器会在自动装箱过程中调用valueOf()方法，多个值相同且在缓存池范围内的Integer实例使用自动装箱创建相同的值，会引用相同的对象。</p>
+<p>int和Integer的区别</p>
+<p>1.int是基本类型，Integer是int的包装类型。<br>2.Integer必须实例化以后才能使用，而int不需要<br>3.在java对象中，int的默认值是0，Integer的默认值是null<br>4.包装类Integer和int比较时，Integer会自动拆箱成int，所以比较的是值是否相等。</p>
+<h2 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h2><p>jdk7开始 switch条件判断语句可以使用String对象.</p>
+<p>switch不支持判断long型, 因为switch的设计初衷是对那些只有少数的几个值进行等值判断</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/02/String StringBuilder StringBuffer的区别/" rel="next" title="java基础之String学习">
+                <i class="fa fa-chevron-left"></i> java基础之String学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/02/封装、继承和多态/" rel="prev" title="java基础之面向对象">
+                java基础之面向对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -422,6 +542,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -442,8 +569,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -523,6 +659,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型"><span class="nav-number">1.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包装类型"><span class="nav-number">2.</span> <span class="nav-text">包装类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存池"><span class="nav-number">3.</span> <span class="nav-text">缓存池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Switch"><span class="nav-number">4.</span> <span class="nav-text">Switch</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -715,6 +867,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

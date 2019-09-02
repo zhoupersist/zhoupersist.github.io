@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[java基础之面向对象]]></title>
+    <url>%2F2019%2F09%2F02%2F%E5%B0%81%E8%A3%85%E3%80%81%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81%2F</url>
+    <content type="text"><![CDATA[1java中有三个访问权限修饰符: private、public和protected,如果不加修饰符表示包级可见 protected用来修饰成员,表示在继承体系中成员对于子类可见,你是这个访问修饰符对于类没有任何意义. 设计良好的模块会隐藏所有的实现细节. 把它的API和他的实现细节隔离开来,模块之间通过API来进行通信,但是不需要知道另外一个模块的内部工作情况,这个概念叫做隐藏或者封装.因此访问权限应当尽可能地使每个类或者成员不被外界访问. 字段决不能是公有的,因为这么做就失去了对字段修改行为的控制,所有用户都可以对字段进行修改,这不是我们想看到的. 可以通过公有的getter和setter来替换公有字段 当然也存在例外: 当包级的私有类或者私有的嵌套类,直接暴露也没什么影响. 12345678910111213141516public class AccessWithInnerClassExample &#123; private class InnerClass&#123; public int id; &#125; private InnerClass innerClass; public AccessWithInnerClassExample() &#123; this.innerClass = new InnerClass(); &#125; public int getValue()&#123; return innerClass.id; &#125;&#125;]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java基础之基本类型]]></title>
+    <url>%2F2019%2F09%2F02%2F%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%20%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B%20%E5%92%8C%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E3%80%82%2F</url>
+    <content type="text"><![CDATA[基本类型long 64int 32short 16byte 8char 16float 32double 64boolean ~ boolean只有两个值，可以使用1bit来存储，但是具体大小没有明确规定，JVM会在编译器将boolean类型的数据转换为int，1表示true，0表示false，jvm支持boolean数组，但是会通过读写byte数组来实现 位数高的基本类型转换为位数低的基本类型，要强制类型转换(会损失精度): 12int value = 1;short s = (short) value; 而从位数低的基本类型转换为位数高的基本类型则会自动转换(隐式类型转换): 12short s = 1;int i = s; 转换由低到高 1byte-short（char）-int-long-float-double +=内部实现了转换机制 所以以下不会报错 12int value = 1;short s += value; 我们来看以下代码： 123short s = 1;short t = 2;short m = s + t; 虽然s 和 t变量都是short，但是s + t被隐式转换为了int类型 所以还需要再强制转为short类型 1.1字面量是double类型, 所以不能直接赋值给float类型,因为这是向下转型. 包装类型基本类型都有各自对应的包装类型。基本类型与其对应的包装类型之间的赋值通过自动装箱和拆箱完成。 123Integer y = 1;int i = y; 缓存池jdk1.5以后 Character Byte Char Integer Long 都有各自的缓存机制。 下面主要介绍Integer的缓存池。 在java8中，Integer缓存池的大小默认为是 -128-127的值 我们来看一下：valueOf(123) 和 new Integer(123)的区别new Integer(123) 每次都会创建一个新的对象而valueOf(123)获取的是缓存池中的对象，多次调用获取的都是同一个对象的引用。 valueOf()的实现比较简单，会先从缓存池中判判断是否存在，存在直接使用缓存池中的对象。 如果没有就return一个new Integer对象。 12345public static Integer valueOf(int i) &#123; if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high) return IntegerCache.cache[i + (-IntegerCache.low)]; return new Integer(i); &#125; 编译器会在自动装箱过程中调用valueOf()方法，多个值相同且在缓存池范围内的Integer实例使用自动装箱创建相同的值，会引用相同的对象。 int和Integer的区别 1.int是基本类型，Integer是int的包装类型。2.Integer必须实例化以后才能使用，而int不需要3.在java对象中，int的默认值是0，Integer的默认值是null4.包装类Integer和int比较时，Integer会自动拆箱成int，所以比较的是值是否相等。 Switchjdk7开始 switch条件判断语句可以使用String对象. switch不支持判断long型, 因为switch的设计初衷是对那些只有少数的几个值进行等值判断]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[java基础之String学习]]></title>
     <url>%2F2019%2F09%2F02%2FString%20StringBuilder%20StringBuffer%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[StringString类中使用final关键字字符数组来保存字符串，final char[] value，所以String是不可变的（反射赋予修改权限除外）。而StringBuilder和StringBuffer是继承自AbstractStringBuiler类,默认大小都是16,在AbstractStringBuilder类中也是使用字符数组保存字符串，但是没有被final修饰的，所以是对象可变的。 123AbstractStringBuilder(intcapacity) &#123; value = new char[capacity];&#125; String类型每次修改的时候，都会产生一个新的对象，引用指向新的对象。而StringBuilder和StringBuffer都是在自身对象上进行修改。 String是不可变的，线程安全。StringBuilder是线程不安全的，StringBuffer由于在方法上都加了sycronized同步锁，所以是线程安全的，但是速度比StringBuilder慢。 String Pool 字符串常量池通过字面量复制的String 都会保存在常量池中，这些字面量在编译时期就确定了。而且在运行时可以通过intern()方法将字符串再添加到常量池中。 通过intern()方法添加的字符串，会现在String Pool中判断该字符串是否在常量池中，如果在直接返回在这个字符串引用，否则先将字符串添加到String Pool中，在返回字符串的引用。 通过以下代码我们可以看一下： 1234567String s1 = new String(&quot;aaa&quot;); String s2 = new String(&quot;aaa&quot;); System.out.println(s1 == s2); //false String s3 = s1.intern(); String s4 = s1.intern(); System.out.println(s3 == s4); //true 在java7之前，字符串常量池存放在运行时常量池中，也就是方法区中，属于永久代。而在java7中，将pool移到了堆中，因为永久代很容易造成outofmemoryError java使用jni调用c++实现的StringTable的intern方法,实现跟java中的hashMap实现差不多,只是不能自动扩容, 默认大小是1009 String的StringPool是一个固定大小的hashtable jdk7以后,可以通过一个参数来指定大小: -XX:StringTableSize = size Sting = “abc” 产生了两个对象。一个是指向常量池中的对象，一个是堆中的对象。 StingBuilder和StringBuffer由于String是不可变对象，String的修改都会生成一个新的对象，性能很差，所以jdk提供了StringBuilder和StringBuffer两个类。它们们的内部也是维护了一个char[]数组，但不是final的 1String s = &quot;avc&quot; + &quot;and&quot; + &quot;you&quot; + &quot;df&quot;; 对于以上的静态字符串连接操作，jvm会在编译期就进行彻底的优化。将多个字符串的连接操作在编译时合成一个大的长字符串。 1String s = &quot;avcandyoudf&quot;; 而对于变量字符串的累加操作： 12345String str1 = new String(&quot;String&quot;);String str2 = new String(&quot;and&quot;);String str3 = new String(&quot;String&quot;);String str4 = new String(&quot;append&quot;);String str = str1 + str2 + str3 + str4; 我们通过反编译工具可以看到jvm也进行了优化，使用StringBuilder将字符串进行累加： 12345String var1 = &quot;String&quot;;String var2 = &quot;and&quot;;String var3 = &quot;String&quot;;String var4 = &quot;append&quot;;(new StringBuilder()).append(var1).append(var2).append(var3).append(var4).toString(); String的concat()方法效率是高于”+”和”+=”运算符，却又远远低于StringBuilder类. StringBuffer的方法都加上了Synchronized，所以它是线程安全的。而StringBuilder是线程不安全的。 在单线程情况下，由于同步要消耗一定的系统资源，所以最好是使用StringBuilder，而在多线程下使用StringBUffer。 还有一点：StringBuilder和StringBufffer在没有指定大小的情况下默认是16，在指定大小的情况下性能是优于默认大小的情况。]]></content>
